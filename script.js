@@ -247,3 +247,23 @@ lista.eliminarPositionEsp(0); // Elimina 20 (ahora en posición 0)
 
 lista.imprimirDesdeInicio();
 lista.imprimirDesdeFinal();
+
+
+
+//**
+//  1. ¿Qué es la notación Big O?
+//La notacion big O -Grande se usa para describir laq complejidad del akgoritmoen terminos de tiempo y espacio.
+// Es una forma de expresar el rendimiento de un algoritmo en función del tamaño de la entrada,
+// en complejidad temporal mide el tiempo que tarda en ejercutarse.
+// Y en complajidad espacial  mide la memoria que utiliza.
+
+//2. ¿Cuál es la diferencia entre O(1) y O(n)?
+//O(1) es una complejidad constante, lo que significa que el tiempo de ejecución no cambia con el tamaño de la entrada.
+//O(n) es una complejidad lineal, lo que significa que el tiempo de ejecución aumenta linealmente con el tamaño de la entrada.
+//Por ejemplo, si tienes un algoritmo O(1), siempre tomará el mismo tiempo para ejecutarse, independientemente de cuántos elementos tenga.
+//En cambio, un algoritmo O(n) tomará más tiempo a medida que aumente el número de elementos.
+
+//3. ¿Por qué es importante entender la notación Big O al diseñar algoritmos?
+// Comparar la eficiencia de diferentes algoritmos y estructuras de datos.
+// Ayuda a tomar decisiones informadas sobre qué algoritmo utilizar en función de los requisitos de tiempo y espacio.
+// Facilita la comunicación entre desarrolladores al describir el rendimiento de un algoritmo de manera estandarizada.
