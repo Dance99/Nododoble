@@ -108,12 +108,12 @@ class DoublyLinkedList {
                 return;
             }
 
-            if(this.head === this.tail){  //*
-                this.head = null;
+            if(this.head === this.tail){  //*La llsita solo tiene un nodo.
+                this.head = null;       
                 this.tail = null;
             }else {
-                this.head = this.head.next;
-                this.head.prev = null;
+                this.head = this.head.next; //* Actualiza la cabeza para que apunte al siguiente nodo.
+                this.head.prev = null;   //* se quita el enlace hacia atras y desconecta el nodo eliminado.
             }
 
             console.timeEnd("timeElimInicio");
@@ -121,25 +121,29 @@ class DoublyLinkedList {
         }
 
     //* eliminar ultimo nodo
-    //*complejidad: O(1)
+    //*complejidad: O(1): tiempo constante, porque no importa cuantos nodos haya, siempre se elimina en un solo paso.
+    //*en inicio actualiza head y prev, y en final actualiza tail y next.
 
     eliminarFinal(){
         console.time("timeElimFinal");
 
-            if (!this.tail) {
+            if (!this.tail) {   //* Si la lista está vacía, no hay nada que eliminar
                 console.timeEnd("timeElimFinal");
                 return;
             }
-            if(this.head === this.tail){
+            if(this.head === this.tail){    //**La lista solo tiene un nodo.
+                //* Si la lista solo tiene un nodo, se actualiza la cabeza y la cola a null, por lo que la lista queda vacia.
+
                 this.head = null;
-                this.tail = null;z
+                this.tail = null;
             }else {
-                this.tail = this.tail.prev;
-                this.tail.next = null;
+                this.tail = this.tail.prev;  //* Actualiza la cola para que apunte al nodo anterior.
+                this.tail.next = null;  //* Se quita el enlace hacia adelante y desconecta el nodo eliminado.
             }
 
             console.timeEnd("timeElimFinal");
         }
+
 
          //* eliminar en posicion especifica
          //*complejidad: O(n)
@@ -148,11 +152,11 @@ class DoublyLinkedList {
     eliminarPositionEsp(position){
         console.time("timeElimPosicionEsp");
 
-        if (!this.head) {
+        if (!this.head) {   //* Si la lista está vacía, no hay nada que eliminar.
             console.timeEnd("timeElimPosicionEsp");
             return;
         }
-        if (position === 0) {
+        if (position === 0) {  //** Si la posición es 0, elimina al inicio.
             this.eliminarInicio();
             console.timeEnd("timeElimPosicionEsp");
             return;
@@ -161,25 +165,28 @@ class DoublyLinkedList {
         let actual = this.head;
         let indice = 0;
 
+        
+        //*recorre la lista hasta encontrar la posicion; Este bucle avanza
+        //  por la lista hasta que encuentra el nodo en la posición especificada o llega al final de la lista.
         while (actual && indice < position) {
-            actual = actual.next;
-            indice++;
+            actual = actual.next;   //* Avanza al siguiente nodo.
+            indice++;   //* Incrementa el índice.
         }
 
-        if (!actual) {
+        if (!actual) {   
             console.timeEnd("timeElimPosicionEsp");
             return;
         }
 
-        if (actual === this.tail) {
+        if (actual === this.tail) {   //* Si el nodo actual es la cola, elimina el último nodo.
             this.eliminarFinal();
             console.timeEnd("timeElimPosicionEsp");
             return;
         }
 
         //reemplazar nodos
-        actual.prev.next = actual.next;
-        actual.next.prev = actual.prev;
+        actual.prev.next = actual.next;  //* El nodo anterior al actual apunta al siguiente nodo del actual.
+        actual.next.prev = actual.prev;  //* El siguiente nodo del actual apunta al nodo anterior al actual.
 
         console.timeEnd("timeElimPosicionEsp");
     }
@@ -189,8 +196,8 @@ class DoublyLinkedList {
          imprimirDesdeInicio() {
             console.time("timeImpDesdeInicio");
 
-        let actual = this.head;
-        while (actual){
+        let actual = this.head;  //* Comienza desde la cabeza de la lista. 
+        while (actual){  //** Recorre la lista hasta que no haya más nodos. 
             console.log(actual.valor);
             actual = actual.next;
         }
@@ -205,7 +212,7 @@ class DoublyLinkedList {
         let actual = this.tail;
         while (actual) {
             console.log(actual.valor);
-            actual = actual.prev;
+            actual = actual.prev;  //* Recorre la lista hacia atrás hasta que no haya más nodos, yendo hacia atras.
         }
 
         console.timeEnd("timeImpDesdeFinal");
