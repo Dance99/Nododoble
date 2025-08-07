@@ -267,3 +267,20 @@ lista.imprimirDesdeFinal();
 // Comparar la eficiencia de diferentes algoritmos y estructuras de datos.
 // Ayuda a tomar decisiones informadas sobre qué algoritmo utilizar en función de los requisitos de tiempo y espacio.
 // Facilita la comunicación entre desarrolladores al describir el rendimiento de un algoritmo de manera estandarizada.
+
+//**
+// Preguntas de Reflexión
+// Responde brevemente las siguientes preguntas:
+// 1. ¿Qué ventajas ofrece una lista doblemente enlazada frente a una lista 
+// simplemente enlazada?
+// Las ventajas de la lista doblemente enlazada son:
+// -- tienen un recorrido en ambas direcciones.
+// --Eliminacion de un nodo de manera eficiente.
+// --inserciones de nodos mas rápidas.
+// -- ideal para estructuras complejas.
+// -- Su única desventaja es que usa mas memoria al usar enlaces dobles en cada nodo.
+
+// 2. ¿Qué pasaría si no consideraras la eficiencia de tus algoritmos al trabajar con 
+// grandes volúmenes de datos?
+// Si no se considera la eficiencia del algoritmo al trabajar se puede retardar el tiempo que tarda y la cantidad de memoria que necesita para resolver el problema.
+// Si no se considera la eficiencia el sistema se puede  volver lento, también puede haber uso excesivo de recursos, problemas con el usuario, generar costos elevados. */
