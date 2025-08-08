@@ -139,9 +139,9 @@ download
 content_copy
 expand_less
 
-`código` public class Main {
-   `código`  public static void main(String[] args) {
-       `código` DoublyLinkedList lista = new DoublyLinkedList();
+public class Main {
+  public static void main(String[] args) {
+    DoublyLinkedList lista = new DoublyLinkedList();
 
         System.out.println("--- Insertando elementos ---");
         lista.insertarInicio(10);
